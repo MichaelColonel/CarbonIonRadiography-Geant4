@@ -1,0 +1,11 @@
+# Verbose
+/control/verbose 0
+/tracking/verbose 0
+/run/verbose 0
+/event/verbose 0
+
+/control/execute novisu.mac
+/control/execute init.mac
+
+# RUN INITIATION
+/run/beamOn 500000

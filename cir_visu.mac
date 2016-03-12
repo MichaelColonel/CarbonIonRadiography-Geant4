@@ -1,0 +1,9 @@
+#####################
+# Verbose
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 1
+/event/verbose 0
+
+/control/execute visu.mac
+/control/execute init.mac
