@@ -1,48 +1,5 @@
-##########################
-# Initialisation procedure
-#
-#/run/initialize
-
-#
-#   P A R T I C L E
-#
-######################################################################
-#						PRIMARY PARTICLES
-
-#---------------------------gps-----------------
-#/gps/pos/shape Circle
-#/gps/position 0. 0. -80. cm
-#/gun/position 0. 0. -80. cm
-#/gps/pos/radius 4. cm
-#/gps/pos/sigma_r .2 mm
-#/gps/particle ion
-#/gps/ion 6 12 6
-#/gps/pos/type Beam
-
-# the incident surface is in the y-z plane
-#/gun/direction 0 0 1
-
-# the beam energy is in gaussian profile
-#/gps/ene/type Gauss
-#/gps/ene/type Mono
-#/gun/energy 5200 MeV
-#/gps/ene/sigma 20 MeV
-
-#####################
-# Phantom (it doesn't work)
-###################
-#/phantom/size 30 30 40 cm
-#/phantom/voxelSize 5 5 1 mm
-#/phantom/update
-
-##########################
-# Set here the cut and the step max for the tracking. 
-# Suggested values of cut and step:
-#
-
-# Definition of the production cuts
-#/run/setCut 100 um
-
+######################
+# Calorimeter and silicon strips threshold
 /thres/calorimeter_slice 90 MeV
 /thres/silicon_strips 3 MeV
 /thres/update

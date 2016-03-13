@@ -8,4 +8,4 @@
 /control/execute init.mac
 
 # RUN INITIATION
-/run/beamOn 500000
+/run/beamOn 100000
