@@ -55,8 +55,11 @@ int main( int argc, char** argv)
 {
 	// construct the default run manager
 #ifdef G4MULTITHREADED
+	int nof_threads = 0;
+	if (argc != 1)
+		nof_threads = atoi(argv[1])
 	G4MTRunManager* runManager = new G4MTRunManager;
-	runManager->SetNumberOfThreads(4);
+	runManager->SetNumberOfThreads(nof_threads);
 #else
 	G4RunManager* runManager = new G4RunManager;
 #endif
@@ -110,7 +113,7 @@ int main( int argc, char** argv)
 */
 	if (argc != 1) { // batch mode
 		G4String command = "/control/execute ";
-		G4String fileName = argv[1];
+		G4String fileName = argv[2];
 		UImanager->ApplyCommand(command + fileName);
 	}
 	else {  // interactive mode : define UI session
