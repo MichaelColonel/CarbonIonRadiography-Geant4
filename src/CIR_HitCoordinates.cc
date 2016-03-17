@@ -24,8 +24,8 @@
 #include <numeric>
 
 #include <gsl/gsl_fit.h>
-
-#include "CIR_ccmath.h"
+#include <trec_ccmath.h>
+//#include "CIR_ccmath.h"
 #include "CIR_HitCoordinates.hh"
 
 #define SIZE 2
@@ -468,7 +468,7 @@ FinalHitCoordinates::calculateFullTrack(G4bool type)
 				tmp[i * FIT + j] = pow( z[i], j);
 		}
 
-		G4double t = cir_ccmath_qrlsq( tmp, f, N, FIT, &id);
+		G4double t = ccm_qrlsq( tmp, f, N, FIT, &id);
 		switch (type) {
 		case true: // x coordinate
 //			full_x.first = f[1];

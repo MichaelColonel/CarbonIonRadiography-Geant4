@@ -57,7 +57,8 @@ int main( int argc, char** argv)
 #ifdef G4MULTITHREADED
 	int nof_threads = 0;
 	if (argc != 1)
-		nof_threads = atoi(argv[1])
+		nof_threads = atoi(argv[1]);
+
 	G4MTRunManager* runManager = new G4MTRunManager;
 	runManager->SetNumberOfThreads(nof_threads);
 #else

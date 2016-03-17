@@ -21,8 +21,9 @@
 #include <fstream>
 
 #include <gsl/gsl_fit.h>
+#include <trec_ccmath.h>
 
-#include "CIR_ccmath.h"
+//#include "CIR_ccmath.h"
 #include "CIR_Track.hh"
 
 namespace {
@@ -56,7 +57,7 @@ Track::create( G4double* z, G4double* f, G4int n)
 			tmp[i * FIT + j] = pow( z[i], j);
 	}
 
-	/* G4double t = */ cir_ccmath_qrlsq( tmp, ff, n, FIT, &id);
+	/* G4double t = */ ccm_qrlsq( tmp, ff, n, FIT, &id);
 
 	Track res = (id == -1) ? Track( ff[1], ff[0]) : Track();
 	
