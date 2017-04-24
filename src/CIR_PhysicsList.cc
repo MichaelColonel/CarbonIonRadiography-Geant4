@@ -126,7 +126,8 @@ PhysicsList::ConstructProcess()
 
 	theParallelWorldScoringProcess->SetParallelWorld(ParallelWorldStr);
 
-	theParticleIterator->reset();
+//	theParticleIterator->reset();
+	G4ParticleTable::G4PTblDicIterator* theParticleIterator = GetParticleIterator();
 
 	while( (*theParticleIterator)() ) {
     
